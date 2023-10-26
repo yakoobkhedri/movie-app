@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="relative">
-      <router-link to="/movie/5555">
+      <router-link :to="{name:'Movie Detail',params:{id:'tt0409591'}}">
         <img class="w-full h-96 object-cover relative" alt="poster"
           src="../assets/img/naruto-poster-kakashi-64nd375j6nkyxw1c.jpg">
         <div class="absolute left-0 right-0 bottom-0 p-4 z-10 bg-black opacity-60">
@@ -23,7 +23,7 @@
 
     <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-5">
       <div v-for="movie in movies" :key="movie.imdbID" class="w-fuul">
-        <router-link :to="'/movie' + movie.imdbID">
+        <router-link :to="'/movie/' + movie.imdbID">
           <div class="relative">
             <img alt="movie poster" :src="movie.Poster" class="w-full h-80 object-cover">
             <div class="absolute py-2 px-4 bg-[#42b883] text-white bottom-4 left-0 capitalize">{{ movie.Type }}</div>
